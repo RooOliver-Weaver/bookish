@@ -1,0 +1,8 @@
+<div class="new-author", data-controller="book-form", data-turbo="false">
+  <input type="text" data-book-form-target="authorInput" placeholder="Or enter a new author">
+  <button type="button" data-action="click->book-form#addAuthor">Add Author</button>
+</div>
+
+<% @authors.each do |author| %>
+  <p><%= link_to author.name, author_path(author) %></p>
+<% end %>

@@ -1,0 +1,5 @@
+<%= render "new" %>
+
+<% @lists.each do |list| %>
+  <%= link_to list.name, user_list_path(list.user_id, list) %>
+<% end %>

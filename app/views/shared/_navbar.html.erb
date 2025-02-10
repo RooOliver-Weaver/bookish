@@ -1,0 +1,26 @@
+<div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="nav-links">
+    <%= link_to "Home", root_path %>
+    <%= link_to "Books", books_path %>
+    <%= link_to "Authors", authors_path %>
+    <%= link_to "Genres", genres_path %>
+    <% if !current_user %>
+      <%= link_to "Login", new_user_session_path %>
+    <% else %>
+      <%= link_to "My Lists", user_lists_path(user_id: current_user.id) %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <% end %>
+    <%# link_to "Home", root_path %>
+  </div>
+</div>

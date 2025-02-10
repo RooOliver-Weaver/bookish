@@ -1,0 +1,23 @@
+<img src="<%= @book.cover_url %>" alt="">
+<%= @book.title %>
+<%= @book.author.name %>
+<%= @book.genre.name %>
+<%= @book.synopsis %>
+
+<div class="add-to-list-form">
+  <% if current_user %>
+    <% if current_user.lists.any? %>
+      <%= form_with model: [current_user, current_user.lists.first, BookList.new], local: true do |f| %>
+        <div class="form-group">
+          <%= f.hidden_field :book_id, value: @book.id %>
+          <%= f.collection_select :list_id, current_user.lists, :id, :name, { prompt: 'Add this Book to a List' }, class: "form-control" %>
+        </div>
+        <%= f.submit "Add to List", class: "btn btn-primary" %>
+      <% end %>
+    <% else %>
+      <p>You don't have any lists yet. <%= link_to "Create a List", new_user_list_path(current_user) %> to add this book.</p>
+    <% end %>
+  <% else %>
+    <p>Please <%= link_to "sign in", new_user_session_path %> to add this book to a list.</p>
+  <% end %>
+</div>

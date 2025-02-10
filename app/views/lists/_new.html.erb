@@ -1,0 +1,12 @@
+<h1>Create a New List</h1>
+
+<%= form_for [current_user, @list] do |f| %>
+  <div class="form-group">
+    <%= f.label :name, "List Name" %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create List", class: "btn btn-primary" %>
+  </div>
+<% end %>

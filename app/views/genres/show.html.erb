@@ -1,0 +1,6 @@
+<%= @genre.name %>
+<% @genre.books.each do |book| %>
+  <p><%= book.title %></p>
+  <p><%= book.author.name %></p>
+  <p><%= book.synopsis %></p>
+<% end %>

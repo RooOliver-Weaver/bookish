@@ -1,0 +1,10 @@
+<h1>Books</h1>
+
+<% @books.each do |book| %>
+  <p><%= link_to book.title, book_path(book) %></p>
+  <p><%= book.author.name %></p>
+  <p><%= book.genre.name %></p>
+  <p><%= book.synopsis %></p>
+<% end %>
+
+<%= render "new" %>

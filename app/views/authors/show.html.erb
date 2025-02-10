@@ -1,0 +1,5 @@
+<% @author.books.each do |book| %>
+  <p><%= link_to book.title, book_path(book) %></p>
+  <p><%= book.genre.name %></p>
+  <p><%= book.synopsis %></p>
+<% end %>

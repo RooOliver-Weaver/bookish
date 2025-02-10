@@ -1,0 +1,8 @@
+<div class="new-genre" data-controller="book-form", data-turbo="false">
+  <input type="text" data-book-form-target="genreInput" placeholder="Or enter a new genre">
+  <button type="button" data-action="click->book-form#addGenre">Add Genre</button>
+</div>
+
+<% @genres.each do |genre| %>
+  <p><%= link_to genre.name, genre_path(genre) %></p>
+<% end %>
