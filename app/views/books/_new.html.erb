@@ -1,15 +1,29 @@
-<%= simple_form_for @book, data: { controller: "book-form", turbo: false } do |f| %>
-  <%= f.input :title %>
+<div class="forms">
+  <div class="new-book">
 
-  <%= f.input :author_id, collection: Author.all, label: "Choose an existing author", include_blank: "Select an author", data: { target: "book-form.authorSelect" } %>
-  <input type="text" data-book-form-target="authorInput" placeholder="Or enter a new author">
-  <button type="button" data-action="click->book-form#addAuthor">Add Author</button>
+      <%= simple_form_for @book, data: { controller: "book-form", turbo: false } do |f| %>
+        <%= f.input :title, class: "form-input" %>
 
-  <%= f.input :genre_id, collection: Genre.all, label: "Choose an existing genre", include_blank: "Select a genre", data: { target: "book-form.genreSelect" } %>
-  <input type="text" data-book-form-target="genreInput" placeholder="Or enter a new genre">
-  <button type="button" data-action="click->book-form#addGenre">Add Genre</button>
+        <%= f.input :author_id, collection: Author.all, label: "Choose an existing author", include_blank: "Select an author", data: { target: "book-form.authorSelect" }, class: "form-input" %><br>
 
-  <%= f.input :synopsis %>
+      <%= f.input :genre_id, collection: Genre.all, label: "Choose an existing genre", include_blank: "Select a genre", data: { target: "book-form.genreSelect" }, class: "form-input" %><br>
 
-  <%= f.submit "Create Book" %>
-<% end %>
+      <%= f.input :synopsis %>
+
+      <%= f.submit "Create Book", class: "new-btn" %>
+    <% end %>
+  </div>
+  <div class="author-genre">
+    Don't find what you're looking for?
+    <div class="new-author">
+      Add New Author
+      <input type="text" data-book-form-target="authorInput" placeholder="Or enter a new author", class: "form-input">
+      <button type="button" data-action="click->book-form#addAuthor", class="new-btn">Add Author</button>
+    </div>
+    <div class="new-genre">
+      Add New Genre
+      <input type="text" data-book-form-target="genreInput" placeholder="Or enter a new genre", class: "form-input">
+      <button type="button" data-action="click->book-form#addGenre", class="new-btn">Add Genre</button>
+    </div>
+  </div>
+</div>

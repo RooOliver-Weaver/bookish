@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @books = Book.all
+    @books = Book.all.sample(4)
   end
 end

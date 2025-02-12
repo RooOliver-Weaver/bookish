@@ -31,6 +31,10 @@ gem "solid_cable"
 gem "simple_form"
 
 gem 'httparty'
+
+gem "cssbundling-rails"
+
+gem 'dartsass-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 

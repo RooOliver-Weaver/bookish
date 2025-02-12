@@ -13,7 +13,7 @@ class GenresController < ApplicationController
   end
 
   def create
-    @genre = Genre.new(name: params[:genre][:name])
+    @genre = Genre.find_or_create_by(name: params[:genre][:name])
 
     respond_to do |format|
       format.json { render json: @genre }

@@ -1,2 +1,5 @@
 @import "components/navbar";
-@import "components/home"
+@import "components/home";
+@import "components/bookshelf";
+@import "components/books";
+@import "components/new-book";

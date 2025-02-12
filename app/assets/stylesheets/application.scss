@@ -1,0 +1,31 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+ @import "components/index";
+ @import "pages/index";
+
+ /* General Styles */
+body {
+  background-image: linear-gradient(to right, rgba(107, 17, 203, 0.7), rgb(37, 117, 252, 0.7)), url('background.jpg');
+  background-size: contain;
+  background-repeat: repeat;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+  text-align: center;
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}

@@ -1,10 +1,18 @@
 <h1>Books</h1>
-
-<% @books.each do |book| %>
-  <p><%= link_to book.title, book_path(book) %></p>
-  <p><%= book.author.name %></p>
-  <p><%= book.genre.name %></p>
-  <p><%= book.synopsis %></p>
-<% end %>
-
+<div class="books">
+  <% @books.each do |book| %>
+    <%= link_to book_path(book) do %>
+      <div class="book-index-card">
+          <div class="book-image-container">
+            <%= image_tag book.cover_url.presence,
+                          alt: book.title,
+                          class: "book-image" %>
+          </div>
+        <h2><%= book.title %></h2>
+        <p><%= book.author.name %></p>
+        <p><%= book.genre.name %></p>
+    </div>
+    <% end %>
+  <% end %>
+</div>
 <%= render "new" %>

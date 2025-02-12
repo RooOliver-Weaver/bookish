@@ -1,4 +1,4 @@
-<section class="hero">
+<div class="hero">
   <div class="container">
     <div class="hero-content">
       <h1>📚 Your Personal Book Tracker</h1>
@@ -11,10 +11,12 @@
       </div>
     </div>
   </div>
-</section>
+</div>
+
+<%= render "shared/bookshelf" %>
 
 <!-- Featured Books Section -->
-<section class="featured-books">
+<div class="featured-books">
   <div class="container">
     <h2 class="section-title">🌟 Featured Reads</h2>
     <p class="section-subtitle">Discover popular books and hidden gems.</p>
@@ -22,7 +24,7 @@
       <% @books.each do |book| %>
         <article class="book-card">
           <div class="book-image-container">
-            <%# image_tag book.image_url.presence || "placeholder.jpg",
+            <%= image_tag book.cover_url.presence,
                           alt: book.title,
                           class: "book-image" %>
           </div>
@@ -35,13 +37,13 @@
       <% end %>
     </div>
   </div>
-</section>
+</div>
 
 <!-- Call to Action Section -->
-<section class="cta-section">
+<div class="cta-section">
   <div class="container">
     <h2>📖 Start Your Reading Journey Today</h2>
     <p>Sign up to create book lists, track your progress, and organize your reading goals effortlessly.</p>
     <%= link_to "Join Now", new_user_registration_path, class: "btn btn-primary btn-lg" %>
   </div>
-</section>
+</div>
